@@ -9,7 +9,7 @@ export default class App extends Component {
     isLoaded: false,
     error: null,
     temperature: null,
-    weather: null
+    weatherName: null
   };
 
   componentDidMount() {
@@ -40,13 +40,13 @@ export default class App extends Component {
   };
 
   render() {
-    const { isLoaded, error } = this.state;
+    const { isLoaded, error, weatherName, temperature } = this.state;
 
     return (
       <View style={styles.container}>
         <StatusBar hidden={true} />
         {isLoaded ? (
-          <Weather />
+          <Weather name={weatherName} temp={Math.floor(temperature - 273.15)} /> // floor: 내림, - 273.15는 화씨 > 섭씨
         ) : (
           <View style={styles.loading}>
             <Text style={styles.loadingText}>Getting the weather</Text>
