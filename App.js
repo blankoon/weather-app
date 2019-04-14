@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'center', // 세로정렬: flex-start, flex-end, space-between, space-around, stretch
+    justifyContent: 'center', // 가로정렬
+    // flexDirection: 'row' // Default: column
+    // flexWrap: 'wrap' // nowrap
   },
 });
