@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo"; // 그라데이션 배경
-import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PropTypes from "prop-types";
 
 const weatherCases = {
@@ -9,37 +9,49 @@ const weatherCases = {
     colors: ["#00C6FB", "#005BEA"],
     title: "Raining",
     subTitle: "Take your umbrella",
-    icon: "ios-rainy"
+    icon: "weather-rainy"
   },
   Clear: {
     colors: ["#FEF253", "#FF7300"],
     title: "Sunny",
     subTitle: "Go out to play",
-    icon: "ios-sunny"
+    icon: "weather-sunny"
   },
   Thunderstorm: {
     colors: ["#00ECBC", "#007ADF"],
     title: "Thunderstorm",
     subTitle: "Actually, outside of the house",
-    icon: "ios-thunderstorm"
+    icon: "weather-lightning"
   },
   Cloudy: {
     colors: ["#D7D2CC", "#304352"],
     title: "Cloudy",
     subTitle: "Boring day, right?",
-    icon: "ios-cloudy"
+    icon: "weather-cloudy"
   },
-  Snow: {
+  Snowy: {
     colors: ["#7DE2FC", "#B9B6E5"],
-    title: "Snow",
+    title: "Snowy",
     subTitle: "Do you want to build a snowman?",
-    icon: "ios-snow"
+    icon: "weather-snowy"
   },
   Drizzle: {
     colors: ["#89F7FE", "#66A8FF"],
     title: "Drizzle",
     subTitle: "Is like rain",
-    icon: "ios-rainy-outline"
+    icon: "weather-hail"
+  },
+  Haze: {
+    colors: ["#89F7FE", "#66A8FF"],
+    title: "Haze",
+    subTitle: "Just choose sunny or rainy!",
+    icon: "weather-hail"
+  },
+  Mist: {
+    colors: ["#D7D2CC", "#304352"],
+    title: "Mist",
+    subTitle: "The day of blind",
+    icon: "weather-fog"
   }
 };
 
@@ -47,7 +59,11 @@ function Weather({ name, temp }) {
   return (
     <LinearGradient style={styles.container} colors={weatherCases[name].colors}>
       <View style={styles.upper}>
-        <Ionicons color="white" size={144} name={weatherCases[name].icon} />
+        <MaterialCommunityIcons
+          color="white"
+          size={144}
+          name={weatherCases[name].icon}
+        />
         <Text style={styles.temp}>{temp}</Text>
       </View>
       <View style={styles.lower}>

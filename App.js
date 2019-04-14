@@ -46,7 +46,7 @@ export default class App extends Component {
       <View style={styles.container}>
         <StatusBar hidden={true} />
         {isLoaded ? (
-          <Weather name={weatherName} temp={Math.floor(temperature - 273.15)} /> // floor: 내림, - 273.15는 화씨 > 섭씨
+          <Weather name={weatherName} temp={Math.ceil(temperature - 273.15)} /> // floor: 올림, - 273.15는 화씨 > 섭씨
         ) : (
           <View style={styles.loading}>
             <Text style={styles.loadingText}>Getting the weather</Text>
