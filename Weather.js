@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 10,
-    backgroundColor: "transparent" // 설정하지 않으면 자식 컴포넌트의 스타일 color 속성이 전체 적용됨
+    backgroundColor: "transparent" //  설정하지 않으면 자식 컴포넌트의 스타일 color 속성이 전체 적용됨
   },
   temp: {
     fontSize: 38,
